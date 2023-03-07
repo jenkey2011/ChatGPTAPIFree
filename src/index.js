@@ -63,7 +63,7 @@ const handleRequest = async (request, env) => {
     }
 
     // Forward a POST request to the upstream URL and return the response
-    const api_key = randomChoice(JSON.parse(env.API_KEYS));
+    const api_key = randomChoice(API_KEYS.split(','));
     const upstreamResponse = await fetch(UPSTREAM_URL, {
       method: 'POST',
       headers: {
